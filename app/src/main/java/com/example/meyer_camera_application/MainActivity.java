@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
         File image = File.createTempFile(imageFileName, ".jpg", storageDir);
+
         mCurrentPhotoPath = image.getAbsolutePath();
         return image;
     }
@@ -122,4 +123,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void fileShareList(View view) {
+        Intent fileViewIntent = new Intent(this, FileShareActivity.class);
+        startActivity(fileViewIntent);
+    }
 }
+
